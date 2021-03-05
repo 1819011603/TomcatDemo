@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+<!--    如果我想要让所有的Servlet都能够获取到连接数据库的信息，不可能在web.xml文件中每个Servlet中都配置一下，这样代码量太大了！
+并且会显得非常啰嗦冗余。
+web.xml文件支持对整个站点进行配置参数信息【所有Servlet都可以取到该参数信息】-->
+<context-param>
+    <param-name>name</param-name>
+    <param-value>all servlet config</param-value>
+</context-param>
+
+<!--    在tomcat/conf/web.xml文件中设置，时间值为20分钟，所有的WEB应用都有效-->
+<!--    第二种方式：在单个的web.xml文件中设置，对单个web应用有效，如果有冲突，以自己的web应用为准。-->
+<session-config>
+    <session-timeout>20</session-timeout>
+</session-config>
+    <!--    配servlet-->
+<!--    <servlet>-->
+<!--        <servlet-name>demo1</servlet-name>-->
+<!--        <servlet-class>com.example.demo.ServletDemo1</servlet-class>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>demo1</servlet-name>-->
+<!--        <url-pattern>/demo1</url-pattern>-->
+<!--    </servlet-mapping>-->
+<!--    <servlet>-->
+<!--        <servlet-name>demo2</servlet-name>-->
+<!--        <servlet-class>com.example.demo.ServletDemo2</servlet-class>-->
+<!--&lt;!&ndash;        指定执行时间&ndash;&gt;-->
+<!--&lt;!&ndash;        1.第一次访问 <load-on-startup></load-on-startup>为负数&ndash;&gt;-->
+<!--&lt;!&ndash;        2.服务器被创建 <load-on-startup></load-on-startup>非负数&ndash;&gt;-->
+<!--        <load-on-startup>-1</load-on-startup>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>demo2</servlet-name>-->
+<!--        <url-pattern>/demo2</url-pattern>-->
+<!--    </servlet-mapping>-->
+</web-app>

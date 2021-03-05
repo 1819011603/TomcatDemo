@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="myjsp:war">
+    <output-path>$PROJECT_DIR$/myjsp/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>myjsp</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="myjsp-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="myjsp:war exploded" />
+    </root>
+  </artifact>
+</component>
